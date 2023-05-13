@@ -30,15 +30,37 @@ def check_win(board, symbol):
     return False
 
 # Game loop
+while True:
+    # Display the board to the players
+    display_board()
 
-# Display the board to the players
-    
-# Prompt Player 1 for their move
-  
-# Check if Player 1 has won or if there is a tie
-    
-# Display the updated board to the players
-    
-# Prompt Player 2 for their move
-    
-# Check if Player 2 has won or if there is a tie
+    # Prompt Player 1 for their move
+    move = get_move(board, "1")
+    update_board(board, move, "X")
+
+    # Check if Player 1 has won or if there is a tie
+    if check_win(board, "X"):
+        display_board()
+        print("Player 1 wins!")
+        break
+    elif len([i for i in board if str(i).isdigit()]) == 0:
+        display_board()
+        print("Tie game!")
+        break
+
+    # Display the updated board to the players
+    display_board()
+
+    # Prompt Player 2 for their move
+    move = get_move(board, "2")
+    update_board(board, move, "O")
+
+    # Check if Player 2 has won or if there is a tie
+    if check_win(board, "O"):
+        display_board()
+        print("Player 2 wins!")
+        break
+    elif len([i for i in board if str(i).isdigit()]) == 0:
+        display_board()
+        print("Tie game!")
+        break# Game loop
