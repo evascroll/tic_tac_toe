@@ -21,3 +21,24 @@ def get_move(board, player):
 def update_board(board, move, symbol):
     board[board.index(move)] = symbol
 
+# check for winner
+def check_win(board, symbol):
+    win_conditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [0, 4, 8], [2, 4, 6]]
+    for condition in win_conditions:
+        if all(board[i] == symbol for i in condition):
+            return True
+    return False
+
+# Game loop
+
+# Display the board to the players
+    
+# Prompt Player 1 for their move
+  
+# Check if Player 1 has won or if there is a tie
+    
+# Display the updated board to the players
+    
+# Prompt Player 2 for their move
+    
+# Check if Player 2 has won or if there is a tie
